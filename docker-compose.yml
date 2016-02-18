@@ -1,0 +1,15 @@
+haproxy:
+  image: tutum/haproxy:latest
+  ports:
+    - "80:80"
+  links:
+    - web1
+    - web2
+web1:
+  image: cijie/haproxy-web-example:1.0.0
+  ports:
+    - "8080:80"
+web2:
+  image: cijie/haproxy-web-example:1.0.0
+  ports:
+    - "8081:80"
